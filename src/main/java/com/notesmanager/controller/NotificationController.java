@@ -20,7 +20,7 @@ public class NotificationController {
 
     @PostMapping
     public ResponseEntity<Notification> createNotification(@RequestBody Notification notification) {
-        log.info("Creating notification: {}", notification.getMessage());
+        log.info("Creating notification: {}", notification.getHeading());
         Notification saved = notificationService.createNotification(notification);
         log.info("Notification created with id: {}", saved.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);

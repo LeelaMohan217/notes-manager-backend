@@ -19,8 +19,8 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public Notification createNotification(Notification notification) {
         log.info("Creating notification");
-        if (notification.getMessage() == null || notification.getMessage().trim().isEmpty()) {
-            throw new IllegalArgumentException("Notification message cannot be empty");
+        if (notification.getHeading() == null || notification.getHeading().trim().isEmpty()) {
+            throw new IllegalArgumentException("Notification heading cannot be empty");
         }
         Notification saved = notificationRepository.save(notification);
         log.info("Notification created with id: {}", saved.getId());

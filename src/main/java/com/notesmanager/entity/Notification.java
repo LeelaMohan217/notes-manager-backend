@@ -18,8 +18,11 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "message", nullable = false)
-    private String message;
+    @Column(name = "heading", nullable = false)
+    private String heading;
+
+    @Column(name = "description", nullable = false, columnDefinition = "TEXT")
+    private String description;
 
     @Column(name = "active")
     private boolean active = true;
